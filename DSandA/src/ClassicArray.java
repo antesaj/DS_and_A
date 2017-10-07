@@ -44,6 +44,7 @@ public class ClassicArray {
 	
 	/*
 	 * Bubble Sort the classic array
+	 * Complexity: O(N^2)
 	 */
 	
 	public void bubbleSort() {
@@ -51,9 +52,27 @@ public class ClassicArray {
 		for (right = arr.length - 1; right > 1; right--) {
 			for (left = 0; left < right; left++) {
 				if (arr[left] > arr[left + 1]) {
-					swap (left, right);
+					swap (left, left + 1);
 				}
 			}
+		}
+	}
+	
+	/*
+	 * Selection sort the classic array
+	 * Complexity: O(N^2)
+	 */
+	
+	public void selectionSort() {
+		int outer, inner, minimum;
+		for (outer = 0; outer < arr.length; outer++) {
+			minimum = outer;
+			for (inner = outer + 1; inner < arr.length; inner++) {
+				if (arr[inner] < arr[minimum]) {
+					minimum = inner;
+				}
+			}
+			swap(outer, minimum);
 		}
 	}
 	
@@ -63,8 +82,8 @@ public class ClassicArray {
 	
 	public void swap(int left, int right) {
 		int temp = arr[left];
-		arr[left] = arr[left + 1];
-		arr[left + 1] = temp;
+		arr[left] = arr[right];
+		arr[right] = temp;
 	}
 	
 	/*

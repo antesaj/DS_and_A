@@ -13,7 +13,7 @@ public class Main {
 		
 		System.out.print("Unsorted: ");
 		System.out.print(arr.toString());
-		arr.bubbleSort();
+		arr.selectionSort();
 		System.out.println("\n");
 		System.out.print("Sorted: ");
 		System.out.println(arr.toString());
