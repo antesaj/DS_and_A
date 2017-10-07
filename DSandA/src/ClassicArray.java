@@ -3,8 +3,8 @@
 // and provides various methods that can be used to
 // manipulate it.
 //
-// The primary purpose is to practice writing sorting algorithms;
-// test cases will be performed in Main.
+// The primary purpose is to practice writing searching/sorting
+// algorithms; test cases will be performed in Main.
 
 public class ClassicArray {
 	
@@ -16,6 +16,30 @@ public class ClassicArray {
 	
 	public ClassicArray(int size) {
 		arr = new int[size];
+	}
+	
+	/*
+	 * Finding third largest element
+	 */
+	
+	public int thirdLargest() {
+		int first = arr[0];
+		int second = Integer.MIN_VALUE;
+		int third = Integer.MIN_VALUE;
+		
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] > first) {
+				third = second;
+				second = first;
+				first = arr[i];
+			} else if (arr[i] > second) {
+				third = second;
+				second = arr[i];
+			} else if (arr[i] > third) {
+				third = arr[i];
+			}
+		}
+		return third;
 	}
 	
 	/*
