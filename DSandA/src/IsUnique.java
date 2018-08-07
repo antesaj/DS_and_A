@@ -6,7 +6,7 @@ public class IsUnique {
     
     public static void main(String[] args) {
         
-        System.out.println(isUnique("asdfghjk ytr!#!"));
+        System.out.println(isUnique("asdfghjk ytr!#"));
     }
     
     public static boolean isUnique(String str) {
